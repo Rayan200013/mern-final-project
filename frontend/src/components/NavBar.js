@@ -22,13 +22,13 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="#">
+              <Link className="nav-link active" aria-current="page" to="/">
                 Home
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="#">
-                CATEGORIES
+                categories
               </Link>
             </li>
             <li className="nav-item">
@@ -50,7 +50,7 @@ const NavBar = () => {
             <li className="nav-item dropdown">
               <Link
                 className="nav-link dropdown-toggle"
-                to="#"
+                to="/about"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -59,7 +59,7 @@ const NavBar = () => {
               </Link>
               <ul className="dropdown-menu">
                 <li>
-                  <Link className="dropdown-item" to="#">
+                  <Link className="dropdown-item" to="/about">
                     The Company
                   </Link>
                 </li>
@@ -79,12 +79,12 @@ const NavBar = () => {
               </ul>
             </li>
           </ul>
-          <div className="d-flex">
-            <button className="btn btn-link mx-2">
-              {/* <FaLanguage /> Language button with icon */}
+          <div className="d-flex align-items-center">
+            <button className=" btn-link mx-2">
+              <i className="far fa-circle-user"></i> {/* User profile icon */}
             </button>
 
-            <button className="btn btn-primary mx-2">signup</button>
+            <button className=" btn-primary mx-2">Sign Up</button>
           </div>
         </div>
       </div>

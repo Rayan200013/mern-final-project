@@ -1,8 +1,8 @@
 .carousel-onezz {
-  padding: 5rem;
+  padding: 100px 5rem;
   background-color: lightblue;
   color: #fff;
-  height: 500px;
+  /* height: 500px; */
   width: 100%;
 }
 
@@ -15,6 +15,11 @@
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
+
+/* .card-img-top:hover {
+  filter: drop-shadow(2px 4px 6px black);
+  cursor: pointer !important;
+} */
 
 .boxing-rayanz h3 {
   text-align: center;
@@ -33,4 +38,24 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 600;
   font-size: 15px;
+}
+
+.rayanz-nav-item-carouselo {
+  color: #fff;
+  /* font-size: 30px; */
+  margin: 40px 8px;
+}
+
+button.nav-link {
+  border: 1px solid #000;
+  /* margin-bottom: 22px; */
+  border-radius: 5px;
+  background: none;
+}
+button.nav-link:hover {
+  background: #000;
+}
+
+ul.slick-dots {
+  display: none !important;
 }

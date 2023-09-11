@@ -161,7 +161,7 @@ const Carouselo = () => {
       <div className="carousel-onezz">
         <h2>Carousel Tutorial</h2>
         <ul className="nav justify-content-center">
-          <li className="nav-item">
+          <li className="nav-item rayanz-nav-item-carouselo">
             <button
               className={`nav-link ${selectedLink === "all" ? "active" : ""}`}
               onClick={() => setSelectedLink("all")}
@@ -169,7 +169,7 @@ const Carouselo = () => {
               Active
             </button>
           </li>
-          <li className="nav-item">
+          <li className="nav-item rayanz-nav-item-carouselo">
             <button
               className={`nav-link ${selectedLink === "link1" ? "active" : ""}`}
               onClick={() => setSelectedLink("link1")}
@@ -177,7 +177,7 @@ const Carouselo = () => {
               Link 1
             </button>
           </li>
-          <li className="nav-item">
+          <li className="nav-item rayanz-nav-item-carouselo">
             <button
               className={`nav-link ${selectedLink === "link2" ? "active" : ""}`}
               onClick={() => setSelectedLink("link2")}

@@ -31,6 +31,8 @@ const Home = () => {
           <p>
             Get a personalized itinerary just for you, guided by traveler tips
             and reviews.
+            <br />
+            Spend a day with me in Shouf
           </p>
           <button className="button-ai-help">Launch a trip with AI</button>
         </div>

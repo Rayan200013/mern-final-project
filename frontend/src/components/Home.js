@@ -5,8 +5,25 @@ import HomeOne from "./HomeOne";
 // import Navbar from "../components/Navbar";
 import Carouselo from "./Carouselo";
 import image2 from "../images/AI-four.png";
+import { useState } from "react";
 
 const Home = () => {
+  const [loading, setLoading] = useState(false);
+
+  const handleSearch = () => {
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.keyCode === 13) {
+      handleSearch();
+    }
+  };
+
   return (
     <>
       <div>
@@ -19,7 +36,21 @@ const Home = () => {
         <div className="search-section">
           <h1>Hello World</h1>
           <p>lorem ipsumj ehudfeghiufslkjc eqbhfoiqgahef hefoigao</p>
-          <input type="search" placeholder="Type to search" />
+          <div id="search" className={loading ? "loading" : ""}>
+            <input
+              id="input"
+              type="search"
+              placeholder="Type to search"
+              onKeyDown={handleKeyDown}
+            />
+            <button id="button" onClick={handleSearch}>
+              <i className="fa fa-search"></i>
+            </button>
+            <div className="spinner">
+              <i className="fa fa-spinner"></i>
+            </div>
+          </div>
+          <div className="note">Click the button or hit enter.</div>
         </div>
       </div>
       {/* Home parent search section end */}
@@ -55,6 +86,10 @@ const Home = () => {
         <Carouselo />
       </div>
       carousel section end */}
+
+      <div className="packages-section">
+        
+      </div>
     </>
   );
 };

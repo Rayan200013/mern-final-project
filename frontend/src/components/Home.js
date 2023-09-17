@@ -1,5 +1,5 @@
 import "../css/Home.css";
-import { Link } from "react-router-dom";
+import { Route, Router } from "react-router-dom";
 import HomeOne from "./HomeOne";
 // import "../App.css";
 // import Navbar from "../components/Navbar";
@@ -87,9 +87,7 @@ const Home = () => {
       </div>
       carousel section end */}
 
-      <div className="packages-section">
-        
-      </div>
+      <div className="packages-section"></div>
     </>
   );
 };

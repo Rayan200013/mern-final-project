@@ -1,11 +1,12 @@
 import "../css/Home.css";
-import { Route, Router } from "react-router-dom";
+// import { Route, Router } from "react-router-dom";
 import HomeOne from "./HomeOne";
 // import "../App.css";
 // import Navbar from "../components/Navbar";
 import Carouselo from "./Carouselo";
 import image2 from "../images/AI-four.png";
 import { useState } from "react";
+import Pricing from "./pricing";
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
@@ -87,7 +88,11 @@ const Home = () => {
       </div>
       carousel section end */}
 
-      <div className="packages-section"></div>
+      {/* pricing start */}
+      <div className="pricing-section">
+        <Pricing />
+      </div>
+      {/* pricing end */}
     </>
   );
 };

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "../css/NavBar.css";
+import SearchBar from "./SearchBar";
 
 const NavBar = () => {
   return (
@@ -27,7 +28,7 @@ const NavBar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="#">
+              <Link className="nav-link" to="/category">
                 categories
               </Link>
             </li>
@@ -46,45 +47,23 @@ const NavBar = () => {
                 HELP
               </Link>
             </li>
-
-            <li className="nav-item dropdown">
-              <Link
-                className="nav-link dropdown-toggle"
-                to="/about"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
+            <li className="nav-item">
+              <Link className="nav-link" to="/about">
                 About Us
               </Link>
-              <ul className="dropdown-menu">
-                <li>
-                  <Link className="dropdown-item" to="/about">
-                    The Company
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="#">
-                    The Team
-                  </Link>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="#">
-                    Photo Gallery
-                  </Link>
-                </li>
-              </ul>
             </li>
           </ul>
-          <div className="d-flex align-items-center">
-            <button className=" btn-link mx-2">
-              <i className="far fa-circle-user"></i> {/* User profile icon */}
-            </button>
 
-            <button className=" btn-primary mx-2">Sign Up</button>
+          <SearchBar />
+
+          <div className="d-flex align-items-center">
+            {/* <button className=" btn-link mx-2">
+              <i className="far fa-circle-user"></i> 
+            </button> */}
+
+            <button className=" btn-primary mx-2">
+              <Link to="/SignIn">Sign Up</Link>
+            </button>
           </div>
         </div>
       </div>

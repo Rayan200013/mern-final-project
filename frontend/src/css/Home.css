@@ -288,3 +288,8 @@
   }
 }
 /* search section end */
+
+.packages-section {
+  margin: 40px 50px;
+  background-color: #000;
+}

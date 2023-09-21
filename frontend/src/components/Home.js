@@ -7,6 +7,7 @@ import Carouselo from "./Carouselo";
 import image2 from "../images/AI-four.png";
 import { useState } from "react";
 import Pricing from "./pricing";
+import MultipleItems from "./Destination";
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
@@ -81,6 +82,12 @@ const Home = () => {
         </div>
       </div>
       {/* Filter section End*/}
+
+      {/* Destination Start */}
+      {/* <div className="Destination-section">
+        <MultipleItems />
+      </div> */}
+      {/* Destination End */}
 
       {/* carousel section start
       <div className="carousel-section-new">

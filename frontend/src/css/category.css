@@ -7,7 +7,15 @@
   gap: 20px; /* Space between cards horizontally */
   padding: 20px; /* Space between cards and website borders */
 }
-
+@media (max-width: 367px) {
+  .category-container {
+    flex-direction: column !important ;
+    gap: unset !important;
+  }
+  .pagination-section-allez {
+    padding: 0 5px !important;
+  }
+}
 /* Category.css */
 .image-card {
   position: relative;
@@ -56,4 +64,21 @@
   z-index: 2 !important;
   cursor: pointer !important;
   left: 170px !important;
+}
+
+.pagination-section-allez {
+  display: flex;
+  padding: 0 20px;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.pagination-section-allez:hover {
+  background-color: rgba(71, 123, 179, 0.815);
+}
+
+.pagination-main-section-allez {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
 }

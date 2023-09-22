@@ -9,7 +9,7 @@ function SearchBar({ placeholder, onChange }) {
     <div className="search-bar">
       <InputGroup size="sm">
         <InputLeftElement pointerEvents="none">
-          <SearchIcon color="gray.300" />
+          <SearchIcon className="serachIcon-section" color="gray.300" />
         </InputLeftElement>
         <Input
           //   className="search-bar"
@@ -23,3 +23,5 @@ function SearchBar({ placeholder, onChange }) {
 }
 
 export default SearchBar;
+
+

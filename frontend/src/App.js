@@ -9,6 +9,9 @@ import SignIn from "./components/SignIn";
 
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom"; // Import BrowserRouter and Routes
 import ScrollToTop from "./components/ScrollToTop";
+import Category2 from "./components/Category2";
+import Category3 from "./components/Category2";
+import CategoryComponent from "./components/CategoryComponents";
 
 function App() {
   return (
@@ -20,6 +23,10 @@ function App() {
           <Route path="/about" element={<AboutUs />} /> {/* Add this route */}
           <Route path="/category" element={<Category />} />{" "}
           <Route path="/SignIn" element={<SignIn />} /> {/* Add this route */}
+          <Route path="/Category2" element={<Category2 />} />
+          <Route path="/Category3" element={<Category3 />} />
+          <Route path="/CategoryComponent" element={<CategoryComponent />} />
+          {/* Add this route */}
         </Routes>
         <ScrollToTop />
         <Footer />

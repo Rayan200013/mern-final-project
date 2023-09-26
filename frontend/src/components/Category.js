@@ -30,6 +30,37 @@ function Category() {
       </nav>
       {/* Breadcrumb */}
 
+      {/* nav links start*/}
+      <ul class="nav justify-content-center nav-tabs">
+        <li class="nav-item">
+          <Link class="nav-link active" aria-current="page" to="/category">
+            All
+          </Link>
+        </li>
+        <li class="nav-item">
+          <Link class="nav-link" to="/category2">
+            Restaurants
+          </Link>
+        </li>
+        <li class="nav-item">
+          <Link class="nav-link" to="/category3">
+            Accomodiation
+          </Link>
+        </li>
+        <li class="nav-item">
+          <Link class="nav-link" to="/category4">
+            Activities
+          </Link>
+        </li>
+        <li class="nav-item">
+          <Link class="nav-link" to="/category5">
+            Landmarks
+          </Link>
+        </li>
+      </ul>
+
+      {/* nav links end*/}
+
       <div className="category-container">
         <Card maxW="sm" boxShadow="none">
           <CardBody>

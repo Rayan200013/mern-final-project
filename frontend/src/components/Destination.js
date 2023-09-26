@@ -6,6 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import "../css/Destination.css";
+import Zarka3 from "../images/Shallalat-Al-Zarka3.jpeg";
 
 export default function Destination() {
   return (
@@ -14,7 +15,7 @@ export default function Destination() {
         component="img"
         alt="green iguana"
         height="140"
-        image="https://mdbootstrap.com/img/new/standard/nature/111.webp"
+        image={Zarka3}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">

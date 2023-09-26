@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 // import Category2 from "./Category2";
 import { MDBPagination, MDBPaginationItem } from "mdb-react-ui-kit";
 
-function Category3() {
+function Category4() {
   return (
     <>
       <nav className="breadcrumb-divider" aria-label="breadcrumb">
@@ -261,4 +261,4 @@ function Category3() {
   );
 }
 
-export default Category3;
+export default Category4;

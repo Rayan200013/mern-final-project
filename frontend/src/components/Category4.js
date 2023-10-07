@@ -24,16 +24,16 @@ function Category4() {
             <Link to="/">Home</Link>
           </li>
           <li className="breadcrumb-item active" aria-current="page">
-            Categories
+            Activities
           </li>
         </ol>
       </nav>
       {/* Breadcrumb */}
-
+      <hr></hr>
       {/* nav links start*/}
       <ul class="nav justify-content-center nav-tabs">
         <li class="nav-item">
-          <Link class="nav-link active" aria-current="page" to="/category">
+          <Link class="nav-link" aria-current="page" to="/category">
             All
           </Link>
         </li>
@@ -48,7 +48,7 @@ function Category4() {
           </Link>
         </li>
         <li class="nav-item">
-          <Link class="nav-link" to="/category4">
+          <Link class="nav-link active" to="/category4">
             Activities
           </Link>
         </li>
@@ -228,7 +228,7 @@ function Category4() {
         </Card>
       </div>
 
-      <nav aria-label="Page navigation example">
+      {/* <nav aria-label="Page navigation example">
         <MDBPagination className="mb-0 pagination-main-section-allez">
           <MDBPaginationItem>
             <Link to="/category" className="pagination-section-allez">
@@ -256,7 +256,7 @@ function Category4() {
             </Link>
           </MDBPaginationItem>
         </MDBPagination>
-      </nav>
+      </nav> */}
     </>
   );
 }

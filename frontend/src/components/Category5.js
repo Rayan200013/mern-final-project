@@ -24,16 +24,16 @@ function Category5() {
             <Link to="/">Home</Link>
           </li>
           <li className="breadcrumb-item active" aria-current="page">
-            Categories
+            Landmarks
           </li>
         </ol>
       </nav>
       {/* Breadcrumb */}
-
+      <hr></hr>
       {/* nav links start*/}
       <ul class="nav justify-content-center nav-tabs">
         <li class="nav-item">
-          <Link class="nav-link active" aria-current="page" to="/category">
+          <Link class="nav-link" aria-current="page" to="/category">
             All
           </Link>
         </li>
@@ -53,7 +53,7 @@ function Category5() {
           </Link>
         </li>
         <li class="nav-item">
-          <Link class="nav-link" to="/category5">
+          <Link class="nav-link active" to="/category5">
             Landmarks
           </Link>
         </li>
@@ -228,7 +228,7 @@ function Category5() {
         </Card>
       </div>
 
-      <nav aria-label="Page navigation example">
+      {/* <nav aria-label="Page navigation example">
         <MDBPagination className="mb-0 pagination-main-section-allez">
           <MDBPaginationItem>
             <Link to="/category" className="pagination-section-allez">
@@ -256,7 +256,7 @@ function Category5() {
             </Link>
           </MDBPaginationItem>
         </MDBPagination>
-      </nav>
+      </nav> */}
     </>
   );
 }

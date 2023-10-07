@@ -4,11 +4,32 @@ import React from "react";
 import "../css/Aboutus.css";
 import TeamMemberCard from "./TeamMemberCard";
 import { Link } from "react-router-dom";
+import aboutUs from "../images/about.jpg";
 
 const AboutUs = () => {
   return (
     <>
-      <nav className="breadcrumb-divider" aria-label="breadcrumb">
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src={aboutUs}
+              class="d-block w-100"
+              alt="About Us"
+              className="about-us-img"
+            />
+            <div class="card-img-overlay">
+              <h5 class="card-title">About Us</h5>
+              <p class="card-text">
+                TAt Allez Retourez, we are passionate about helping people
+                explore Chouf.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* <nav className="breadcrumb-divider" aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
             <Link to="/">Home</Link>
@@ -17,7 +38,7 @@ const AboutUs = () => {
             Categories
           </li>
         </ol>
-      </nav>
+      </nav> */}
       {/* Breadcrumb */}
       <div className="about-us-container">
         <section id="page-header" class="about-header">

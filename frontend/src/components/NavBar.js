@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import "../css/NavBar.css";
 import SearchBar from "./SearchBar";
+import logo from "../images/logo.jpg";
 
 const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary rayan-navBar">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          Navbar
+          <img src={logo} alt="logo" className="logo-allez-retour" />
         </Link>
         <button
           className="navbar-toggler"
@@ -33,18 +34,13 @@ const NavBar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/CategoryComponent">
+              <Link className="nav-link" to="/destination">
                 DESTINATION
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="#">
-                OFFERS
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="#">
-                HELP
+              <Link className="nav-link" to="/ChatApp">
+                Have a chat
               </Link>
             </li>
             <li className="nav-item">
@@ -52,16 +48,35 @@ const NavBar = () => {
                 About Us
               </Link>
             </li>
+            {/* <li className="nav-item">
+              <Link className="nav-link" to="#">
+                HELP
+              </Link>
+            </li> */}
+            <li className="nav-item">
+              <Link className="nav-link" to="/contact">
+                Contact Us
+              </Link>
+            </li>
           </ul>
 
-          <SearchBar />
+          {/* <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            
+          </form> */}
+          {/* <SearchBar /> */}
 
           <div className="d-flex align-items-center">
             {/* <button className=" btn-link mx-2">
               <i className="far fa-circle-user"></i> 
             </button> */}
 
-            <button className=" btn-primary mx-2">
+            <button className=" btn-primary mx-2 allez-nav-search-button">
               <Link to="/SignIn">Sign Up</Link>
             </button>
           </div>

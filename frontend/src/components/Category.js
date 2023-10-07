@@ -10,6 +10,7 @@ import {
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../css/category.css";
+import "../css/NavBar.css";
 import { Link } from "react-router-dom";
 // import Home from "./Home";
 // import Category2 from "./Category2";
@@ -31,6 +32,7 @@ function Category() {
       {/* Breadcrumb */}
 
       {/* nav links start*/}
+      <hr></hr>
       <ul class="nav justify-content-center nav-tabs">
         <li class="nav-item">
           <Link class="nav-link active" aria-current="page" to="/category">

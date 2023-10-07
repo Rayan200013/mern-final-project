@@ -25,24 +25,24 @@ export default function App() {
             </div>
 
             <div>
-              <Link to="/" className="me-4 text-reset">
-                <MDBIcon fab icon="facebook-f" />
+              <Link to="/" className="me-4 text-reset icon-rayan">
+                <MDBIcon fab icon="facebook-f" className="icon-rayan" />
               </Link>
-              <Link to="/" className="me-4 text-reset">
-                <MDBIcon fab icon="twitter" />
+              <Link to="/" className="me-4 text-reset icon-rayan">
+                <MDBIcon fab icon="twitter" className="icon-rayan" />
               </Link>
-              <Link to="/" className="me-4 text-reset">
+              {/* <Link to="/" className="me-4 text-reset">
                 <MDBIcon fab icon="google" />
+              </Link> */}
+              <Link to="/" className="me-4 text-reset icon-rayan">
+                <MDBIcon fab icon="instagram" className="icon-rayan" />
               </Link>
-              <Link to="/" className="me-4 text-reset">
-                <MDBIcon fab icon="instagram" />
+              <Link to="/" className="me-4 text-reset ">
+                <MDBIcon fab icon="linkedin" className="icon-rayan" />
               </Link>
-              <Link to="/" className="me-4 text-reset">
-                <MDBIcon fab icon="linkedin" />
-              </Link>
-              <Link to="/" className="me-4 text-reset">
+              {/* <Link to="/" className="me-4 text-reset">
                 <MDBIcon fab icon="github" />
-              </Link>
+              </Link> */}
             </div>
           </section>
 
@@ -51,17 +51,17 @@ export default function App() {
               <MDBRow className="mt-3">
                 <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">
                   <h6 className="text-uppercase fw-bold mb-4">
-                    <MDBIcon icon="gem" className="me-3" />
-                    Company name
+                    <MDBIcon icon="gem" className="me-3 icon-rayan" />
+                    Allez Retour
                   </h6>
                   <p>
-                    Here you can use rows and columns to organize your footer
-                    content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit.
+                    We're here to help you explore the beauty of the Chouf
+                    Mountains, offering insights into nature, culture, and
+                    cuisine.
                   </p>
                 </MDBCol>
 
-                <MDBCol md="2" lg="2" xl="2" className="mx-auto mb-4">
+                {/* <MDBCol md="2" lg="2" xl="2" className="mx-auto mb-4">
                   <h6 className="text-uppercase fw-bold mb-4">Products</h6>
                   <p>
                     <Link to="#!" className="text-reset">
@@ -83,28 +83,28 @@ export default function App() {
                       Laravel
                     </Link>
                   </p>
-                </MDBCol>
+                </MDBCol> */}
 
                 <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
                   <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
                   <p>
-                    <Link to="#!" className="text-reset">
-                      Pricing
+                    <Link to="/#main-one" className="text-reset">
+                      Home
                     </Link>
                   </p>
                   <p>
-                    <Link to="#!" className="text-reset">
-                      Settings
+                    <Link to="/category" className="text-reset">
+                      Categories
                     </Link>
                   </p>
                   <p>
-                    <Link to="#!" className="text-reset">
-                      Orders
+                    <Link to="/destination" className="text-reset">
+                      Destination
                     </Link>
                   </p>
                   <p>
-                    <Link to="#!" className="text-reset">
-                      Help
+                    <Link to="/About" className="text-reset">
+                      About
                     </Link>
                   </p>
                 </MDBCol>
@@ -112,18 +112,20 @@ export default function App() {
                 <MDBCol md="4" lg="3" xl="3" className="mx-auto mb-md-0 mb-4">
                   <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
                   <p>
-                    <MDBIcon icon="home" className="me-2" />
-                    New York, NY 10012, US
+                    <MDBIcon icon="home" className="me-2 icon-rayan" />
+                    Al chouf, Mount Lebanon, Lebanon
                   </p>
                   <p>
-                    <MDBIcon icon="envelope" className="me-3" />
-                    info@example.com
+                    <MDBIcon icon="envelope" className="me-3 icon-rayan" />
+                    info@allezretour.com
                   </p>
                   <p>
-                    <MDBIcon icon="phone" className="me-3" /> + 01 234 567 88
+                    <MDBIcon icon="phone" className="me-3 icon-rayan" /> + 961
+                    03 000 000
                   </p>
                   <p>
-                    <MDBIcon icon="print" className="me-3" /> + 01 234 567 89
+                    <MDBIcon icon="print" className="me-3 icon-rayan" /> + 961
+                    70 000 000
                   </p>
                 </MDBCol>
               </MDBRow>
@@ -132,11 +134,11 @@ export default function App() {
 
           <div
             className="text-center p-4"
-            style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
+            style={{ backgroundColor: "rgb(107 255 136 / 15%)" }}
           >
-            © 2021 Copyright:
-            <Link className="text-reset fw-bold" to="https://mdbootstrap.com/">
-              MDBootstrap.com
+            © 2023 Copyright:
+            <Link className="text-reset fw-bold allez-retour-link" to="/">
+              Allez Retour
             </Link>
           </div>
         </MDBFooter>

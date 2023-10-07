@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import React, { useRef, useEffect, useState } from "react";
 import "../App.css";
+import { Link } from "react-router-dom";
 // import bannerSecond from "../images/banner-second.jpg";
 
 function HomeOne() {
@@ -22,7 +23,7 @@ function HomeOne() {
     {
       id: 1,
       imgUrl:
-        "https://images.unsplash.com/photo-1501960645408-12c9bcfca49f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fExlYmFub258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1445964047600-cdbdb873673d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fEFsJTIwQ2hvdWYlMjBDZWRhciUyME5hdHVyZSUyMFJlc2VydmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
       desc: "Some beautiful roads cannot be discovered without getting loss.",
       name: "EXPLORE NATURE",
     },
@@ -58,7 +59,7 @@ function HomeOne() {
 
   return (
     <>
-      <div className="main-rayan">
+      <div className="main-rayan" id="main-one">
         <div className="loadbar" style={{ width: `${loadingProgress}%` }}></div>
         <div id="slide" ref={slideRef}>
           {data.map((item) => (
@@ -70,7 +71,15 @@ function HomeOne() {
               <div className="content">
                 <div className="name">{item.name}</div>
                 <div className="des">{item.desc}</div>
-                <button>See more</button>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                  <Link
+                    type="button"
+                    class="btn-primary btn-lg px-4 me-md-2 button-rayan "
+                    to="#"
+                  >
+                    View More
+                  </Link>
+                </div>
               </div>
             </div>
           ))}

@@ -7,12 +7,14 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../css/category.css";
+import "../css/NavBar.css";
+
 import { Link } from "react-router-dom";
 // import Home from "./Home";
 // import Category2 from "./Category2";
 import { MDBPagination, MDBPaginationItem } from "mdb-react-ui-kit";
 import mamlaka from "../images/Al-Mamlaka.jpeg";
-import Zarka2 from "../images/Shallalat-Al-Zarka2.jpeg";
+import Zarka2 from "../images/Shallalat-Al-Zarka3.jpeg";
 import lavender from "../images/lavender.jpeg";
 import "../css/Destination.css";
 
@@ -25,21 +27,22 @@ function Category2() {
             <Link to="/">Home</Link>
           </li>
           <li className="breadcrumb-item active" aria-current="page">
-            Categories
+            Restaurants
           </li>
         </ol>
       </nav>
       {/* Breadcrumb */}
 
+      <hr></hr>
       {/* nav links start*/}
       <ul class="nav justify-content-center nav-tabs">
         <li class="nav-item">
-          <Link class="nav-link active" aria-current="page" to="/category">
+          <Link class="nav-link " aria-current="page" to="/category">
             All
           </Link>
         </li>
         <li class="nav-item">
-          <Link class="nav-link" to="/category2">
+          <Link class="nav-link active" to="/category2">
             Restaurants
           </Link>
         </li>
@@ -73,7 +76,7 @@ function Category2() {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              Lizard
+              AL Mamlaka
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Lizards are a widespread group of squamate reptiles, with over
@@ -127,7 +130,7 @@ function Category2() {
       </div>
       {/* headOfCards End */}
 
-      <nav aria-label="Page navigation example">
+      {/* <nav aria-label="Page navigation example">
         <MDBPagination className="mb-0 pagination-main-section-allez">
           <MDBPaginationItem>
             <Link to="/category" className="pagination-section-allez">
@@ -155,7 +158,7 @@ function Category2() {
             </Link>
           </MDBPaginationItem>
         </MDBPagination>
-      </nav>
+      </nav> */}
     </>
   );
 }

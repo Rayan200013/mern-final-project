@@ -13,12 +13,16 @@ import Category2 from "./components/Category2";
 import Category3 from "./components/Category3";
 import Category4 from "./components/Category4";
 import Category5 from "./components/Category5";
+import Destination from "./components/Destination";
+import DestinationSingle from "./components/DestinationSingle";
+import ChatApp from "./components/ChatApp";
 
 function App() {
   return (
     <>
       <Router>
         <NavBar />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} /> {/* Add this route */}
@@ -29,6 +33,9 @@ function App() {
           <Route path="/Category4" element={<Category4 />} />
           <Route path="/Category5" element={<Category5 />} />
           <Route path="/SignUp" element={<SignUp />} /> {/* Add this route */}
+          <Route path="/destination" element={<Destination />} />
+          <Route path="/DestinationSingle" element={<DestinationSingle />} />
+          <Route path="/ChatApp" element={<ChatApp />} />
           {/* Add this route */}
         </Routes>
         <ScrollToTop />

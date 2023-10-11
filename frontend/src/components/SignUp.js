@@ -12,6 +12,11 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+// import { useEffect } from "react";
+import auth from "../auth";
+import api from "../api";
 
 function Copyright(props) {
   return (
@@ -34,15 +39,52 @@ function Copyright(props) {
 // TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
-
+function isValidEmail(email) {
+  // Regular expression for a valid email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
 export default function SignUp() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleSignup = async () => {
+    try {
+      if (!email || !password || !firstName || !lastName) {
+        setError("All fields are required.");
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        setError("Invalid email format.");
+        return;
+      }
+      const signupRes = await api.post("/users/signup", {
+        firstName,
+        lastName,
+        email,
+        password,
+      });
+      if (signupRes.data.success) {
+        const loginResponse = await api.post("/users/login", {
+          email,
+          password,
+        });
+        auth.authenticateUser(loginResponse.data.token);
+        navigate("/SignIn");
+      }
+    } catch (error) {
+      if (error.response.status === 409) {
+        // HTTP status code 409 indicates a conflict (user already exists)
+        setError("User with this email already exists.");
+      } else {
+        setError(error.response.data.message || "Signup failed.");
+      }
+    }
   };
 
   return (
@@ -63,12 +105,7 @@ export default function SignUp() {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box
-            component="form"
-            noValidate
-            onSubmit={handleSubmit}
-            sx={{ mt: 3 }}
-          >
+          <Box component="form" noValidate sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -78,6 +115,7 @@ export default function SignUp() {
                   fullWidth
                   id="firstName"
                   label="First Name"
+                  onChange={(e) => setFirstName(e.target.value)}
                   autoFocus
                 />
               </Grid>
@@ -88,16 +126,19 @@ export default function SignUp() {
                   id="lastName"
                   label="Last Name"
                   name="lastName"
+                  onChange={(e) => setLastName(e.target.value)}
                   autoComplete="family-name"
                 />
               </Grid>
               <Grid item xs={12}>
+                {error && <div style={{ color: "red" }}>{error}</div>}
                 <TextField
                   required
                   fullWidth
                   id="email"
                   label="Email Address"
                   name="email"
+                  onChange={(e) => setEmail(e.target.value)}
                   autoComplete="email"
                 />
               </Grid>
@@ -107,6 +148,7 @@ export default function SignUp() {
                   fullWidth
                   name="password"
                   label="Password"
+                  onChange={(e) => setPassword(e.target.value)}
                   type="password"
                   id="password"
                   autoComplete="new-password"
@@ -122,10 +164,11 @@ export default function SignUp() {
               </Grid>
             </Grid>
             <Button
-              type="submit"
+              type="button"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              onClick={handleSignup}
             >
               Sign Up
             </Button>

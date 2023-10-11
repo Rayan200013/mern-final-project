@@ -77,7 +77,7 @@ const NavBar = () => {
             </button> */}
 
             <button className=" btn-primary mx-2 allez-nav-search-button">
-              <Link to="/SignIn">Sign Up</Link>
+              <Link to="/SignUp">Sign Up</Link>
             </button>
           </div>
         </div>

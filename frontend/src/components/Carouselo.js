@@ -1,119 +1,17 @@
-// Heloo
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
-import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../css/Carouselo.css";
-
-const cardData = [
-  {
-    id: "all", // Use "all" as the ID for all cards when the "Active" link is selected
-    title: "Card 1 Title",
-    image:
-      "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=801",
-    text: "Some quick example text to build on the card title and make u",
-  },
-  {
-    id: "all",
-    title: "Card 2 Title",
-    image:
-      "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80",
-    text: "Some quick example text to build on the card title and make up the bulk of the cards content",
-    // other card data...
-  },
-  // Add more cards with "all" as the ID...
-
-  {
-    id: "link1", // Use unique IDs for cards linked to "Link 1"
-    title: "Card 3 Title",
-    image:
-      "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80",
-    text: "Some quick example text to build on the card title and make up the bulk of the cards content",
-    // other card data...
-  },
-  // Add more cards with unique IDs for "Link 1"...
-  {
-    id: "link2", // Use unique IDs for cards linked to "Link 2"
-    title: "Card 4 Title",
-    image:
-      "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80",
-    text: "Some quick example text to build on the card title and make up the bulk of the cards content",
-    // other card data...
-  },
-
-  {
-    id: "link2", // Use unique IDs for cards linked to "Link 2"
-    title: "Card 4 Title",
-    image:
-      "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80",
-    text: "Some quick example text to build on the card title and make up the bulk of the cards content",
-    // other card data...
-  },
-  {
-    id: "link2", // Use unique IDs for cards linked to "Link 2"
-    title: "Card 4 Title",
-    image:
-      "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80",
-    text: "Some quick example text to build on the card title and make up the bulk of the cards content",
-    // other card data...
-  },
-  {
-    id: "link2", // Use unique IDs for cards linked to "Link 2"
-    title: "Card 4 Title",
-    image:
-      "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80",
-    text: "Some quick example text to build on the card title and make up the bulk of the cards content",
-    // other card data...
-  },
-  {
-    id: "link2", // Use unique IDs for cards linked to "Link 2"
-    title: "Card 4 Title",
-    image:
-      "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80",
-    text: "Some quick example text to build on the card title and make up the bulk of the cards content",
-    // other card data...
-  },
-
-  {
-    id: "link2", // Use unique IDs for cards linked to "Link 2"
-    title: "Card 4 Title",
-    image:
-      "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80",
-    text: "Some quick example text to build on the card title and make up the bulk of the cards content",
-    // other card data...
-  },
-  {
-    id: "link2", // Use unique IDs for cards linked to "Link 2"
-    title: "Card 4 Title",
-    image:
-      "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80",
-    text: "Some quick example text to build on the card title and make up the bulk of the cards content",
-    // other card data...
-  },
-  {
-    id: "link2", // Use unique IDs for cards linked to "Link 2"
-    title: "Card 4 Title",
-    image:
-      "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80",
-    text: "Some quick example text to build on the card title and make up the bulk of the cards content",
-    // other card data...
-  },
-  {
-    id: "link2", // Use unique IDs for cards linked to "Link 2"
-    title: "Card 4 Title",
-    image:
-      "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80",
-    text: "Some quick example text to build on the card title and make up the bulk of the cards content",
-    // other card data...
-  },
-
-  // Add more cards with unique IDs for "Link 2"...
-];
+import api from "../api";
 
 const Carouselo = () => {
   const [selectedLink, setSelectedLink] = useState("all");
+  const [restaurantsData, setRestaurantsData] = useState([]);
+  const [landmarksData, setLandmarksData] = useState([]);
+  const [activitiesData, setActivitiesData] = useState([]);
+  const [accommodationsData, setAccommodationsData] = useState([]);
+  const [allData, setAllData] = useState([]);
 
   const settings = {
     dots: true,
@@ -150,16 +48,84 @@ const Carouselo = () => {
     ],
   };
 
-  // Filter cards based on the selected link
-  const filteredCards =
-    selectedLink === "all"
-      ? cardData
-      : cardData.filter((card) => card.id === selectedLink);
+  useEffect(() => {
+    getRestaurants();
+  }, []);
 
+  useEffect(() => {
+    getAllData();
+  }, []);
+
+  useEffect(() => {
+    getLandmarks();
+  }, []);
+
+  useEffect(() => {
+    getActivities();
+  }, []);
+
+  useEffect(() => {
+    getAccommodations();
+  }, []);
+
+  const getAllData = async () => {
+    try {
+      const response = await api.get(
+        "http://127.0.0.1:3001/api/allData/getAllData"
+      );
+      setAllData(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getRestaurants = async () => {
+    try {
+      const response = await api.get(
+        "http://127.0.0.1:3001/api/restaurants/getAllRestaurants"
+      );
+      setRestaurantsData(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getLandmarks = async () => {
+    try {
+      const response = await api.get(
+        "http://127.0.0.1:3001/api/landmarks/getAllLandmarks"
+      );
+      setLandmarksData(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getActivities = async () => {
+    try {
+      const response = await api.get(
+        "http://127.0.0.1:3001/api/activities/getAllActivities"
+      );
+      setActivitiesData(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getAccommodations = async () => {
+    try {
+      const response = await api.get(
+        "http://127.0.0.1:3001/api/accommodations/getAllAccommodations"
+      );
+      setAccommodationsData(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       <div className="carousel-onezz">
-        <h2>Carousel Tutorial</h2>
+        <h2 style={{ color: "black" }}>Explore Our Diverse Categories</h2>
         <ul className="nav justify-content-center">
           <li className="nav-item rayanz-nav-item-carouselo">
             <button
@@ -171,32 +137,40 @@ const Carouselo = () => {
           </li>
           <li className="nav-item rayanz-nav-item-carouselo">
             <button
-              className={`nav-link ${selectedLink === "link1" ? "active" : ""}`}
-              onClick={() => setSelectedLink("link1")}
+              className={`nav-link ${
+                selectedLink === "restaurantsId" ? "active" : ""
+              }`}
+              onClick={() => setSelectedLink("restaurantsId")}
             >
               Restaurants
             </button>
           </li>
           <li className="nav-item rayanz-nav-item-carouselo">
             <button
-              className={`nav-link ${selectedLink === "link2" ? "active" : ""}`}
-              onClick={() => setSelectedLink("link2")}
+              className={`nav-link ${
+                selectedLink === "accommodationsId" ? "active" : ""
+              }`}
+              onClick={() => setSelectedLink("accommodationsId")}
             >
-              Accomidation
+              Accommodations
             </button>
           </li>
           <li className="nav-item rayanz-nav-item-carouselo">
             <button
-              className={`nav-link ${selectedLink === "link1" ? "active" : ""}`}
-              onClick={() => setSelectedLink("link1")}
+              className={`nav-link ${
+                selectedLink === "activitiesId" ? "active" : ""
+              }`}
+              onClick={() => setSelectedLink("activitiesId")}
             >
               Activities
             </button>
           </li>
           <li className="nav-item rayanz-nav-item-carouselo">
             <button
-              className={`nav-link ${selectedLink === "link1" ? "active" : ""}`}
-              onClick={() => setSelectedLink("link1")}
+              className={`nav-link ${
+                selectedLink === "landmarksId" ? "active" : ""
+              }`}
+              onClick={() => setSelectedLink("landmarksId")}
             >
               Landmarks
             </button>
@@ -204,18 +178,86 @@ const Carouselo = () => {
         </ul>
 
         <Slider {...settings}>
-          {filteredCards.map((card) => (
-            <div className="boxing-rayanz" key={card.id}>
-              <img src={card.image} className="card-img-top" alt={card.title} />
-              <div className="card-body">
-                <h5 className="card-title">{card.title}</h5>
-                <p className="card-text">{card.text}</p>
-                <Link to="#" className="btn btn-primary button-rayan-style">
-                  View More
-                </Link>
-              </div>
-            </div>
-          ))}
+          {allData.map(
+            (card) =>
+              selectedLink === "all" && (
+                <div className="boxing-rayanz">
+                  <img
+                    src={card[0]?.Images}
+                    className="card-img-top"
+                    alt={card.title}
+                  />
+                  <div className="card-body">
+                    <button className="card-title">{card[0]?.Name}</button>
+                    <p>{card[0]?.PhoneNumber}</p>
+                  </div>
+                </div>
+              )
+          )}
+          {restaurantsData.map(
+            (card) =>
+              selectedLink === "restaurantsId" && (
+                <div className="boxing-rayanz" key={card.id}>
+                  <img
+                    src={card?.Images}
+                    className="card-img-top"
+                    alt={card.title}
+                  />
+                  <div className="card-body">
+                    <button className="card-title">{card?.Name}</button>
+                    <p>{card?.PhoneNumber}</p>
+                  </div>
+                </div>
+              )
+          )}
+          {landmarksData.map(
+            (card) =>
+              selectedLink === "landmarksId" && (
+                <div className="boxing-rayanz" key={card.id}>
+                  <img
+                    src={card?.Images}
+                    className="card-img-top"
+                    alt={card.title}
+                  />
+                  <div className="card-body">
+                    <button className="card-title">{card?.Name}</button>
+                    <p>{card?.PhoneNumber}</p>
+                  </div>
+                </div>
+              )
+          )}
+          {activitiesData.map(
+            (card) =>
+              selectedLink === "activitiesId" && (
+                <div className="boxing-rayanz" key={card.id}>
+                  <img
+                    src={card?.Images}
+                    className="card-img-top"
+                    alt={card.title}
+                  />
+                  <div className="card-body">
+                    <button className="card-title">{card?.Name}</button>
+                    <p>{card?.PhoneNumber}</p>
+                  </div>
+                </div>
+              )
+          )}
+          {accommodationsData.map(
+            (card) =>
+              selectedLink === "accommodationsId" && (
+                <div className="boxing-rayanz" key={card.id}>
+                  <img
+                    src={card?.Images}
+                    className="card-img-top"
+                    alt={card.title}
+                  />
+                  <div className="card-body">
+                    <button className="card-title">{card?.Name}</button>
+                    <p>{card?.PhoneNumber}</p>
+                  </div>
+                </div>
+              )
+          )}
         </Slider>
       </div>
     </>

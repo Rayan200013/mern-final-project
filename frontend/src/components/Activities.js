@@ -5,32 +5,18 @@ import api from "../api";
 import { Link } from "react-router-dom";
 
 function Category() {
-  const [favorites, setFavorites] = useState([]);
-  const [allData, setAllData] = useState([]);
+  const [activitiesData, setActivitiesData] = useState([]);
 
   useEffect(() => {
-    getAllData();
+    getActivities();
   }, []);
 
-  const toggleFavorite = (card) => {
-    if (favorites.some((favorite) => favorite.id === card.id)) {
-      // Remove from favorites
-      const updatedFavorites = favorites.filter(
-        (favorite) => favorite.id !== card.id
-      );
-      setFavorites(updatedFavorites);
-    } else {
-      // Add to favorites
-      setFavorites([...favorites, card]);
-    }
-  };
-
-  const getAllData = async () => {
+  const getActivities = async () => {
     try {
       const response = await api.get(
-        "http://127.0.0.1:3001/api/allData/getAllData"
+        "http://127.0.0.1:3001/api/activities/getAllActivities"
       );
-      setAllData(response.data);
+      setActivitiesData(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -54,7 +40,7 @@ function Category() {
       <hr></hr>
       <ul class="nav justify-content-center nav-tabs">
         <li class="nav-item">
-          <Link class="nav-link active" aria-current="page" to="/category">
+          <Link class="nav-link" aria-current="page" to="/category">
             All
           </Link>
         </li>
@@ -69,7 +55,7 @@ function Category() {
           </Link>
         </li>
         <li class="nav-item">
-          <Link class="nav-link" to="/Activities">
+          <Link class="nav-link active" to="/Activities">
             Activities
           </Link>
         </li>
@@ -80,9 +66,9 @@ function Category() {
         </li>
       </ul>
       <div className="card-container">
-        {allData.map((data) => (
+        {activitiesData.map((data) => (
           <div className="card">
-            <div className="favorite-icon" onClick={() => toggleFavorite(data)}>
+            <div className="favorite-icon">
               <svg
                 viewBox="0 0 24 24"
                 fill="rgba(0, 0, 0, 0.4)"
@@ -101,11 +87,15 @@ function Category() {
               </svg>
             </div>
             <div className="image-container">
-              <img src={data[0]?.Images} alt="{data.title}" />
+              <img
+                src={data?.Images}
+                alt="{data.title}"
+                style={{ height: "50%" }}
+              />
             </div>
             <div className="card-content">
               <button>
-                <p>{data[0].Name}</p>
+                <p>{data.Name}</p>
               </button>
             </div>
           </div>

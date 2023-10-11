@@ -9,13 +9,14 @@ import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom"; // Import BrowserRouter and Routes
 import ScrollToTop from "./components/ScrollToTop";
-import Category2 from "./components/Category2";
-import Category3 from "./components/Category3";
-import Category4 from "./components/Category4";
-import Category5 from "./components/Category5";
+import Restaurants from "./components/Restaurants";
+import Accommodations from "./components/Accommodations";
+import Activities from "./components/Activities";
+import Landmarks from "./components/Landmarks";
 import Destination from "./components/Destination";
 import DestinationSingle from "./components/DestinationSingle";
 import ChatApp from "./components/ChatApp";
+import Favorites from "./components/Favorites";
 
 function App() {
   return (
@@ -28,14 +29,15 @@ function App() {
           <Route path="/about" element={<AboutUs />} /> {/* Add this route */}
           <Route path="/category" element={<Category />} />{" "}
           <Route path="/SignIn" element={<SignIn />} /> {/* Add this route */}
-          <Route path="/Category2" element={<Category2 />} />
-          <Route path="/Category3" element={<Category3 />} />
-          <Route path="/Category4" element={<Category4 />} />
-          <Route path="/Category5" element={<Category5 />} />
+          <Route path="/Restaurants" element={<Restaurants />} />
+          <Route path="/Accommodations" element={<Accommodations />} />
+          <Route path="/Activities" element={<Activities />} />
+          <Route path="/Landmarks" element={<Landmarks />} />
           <Route path="/SignUp" element={<SignUp />} /> {/* Add this route */}
           <Route path="/destination" element={<Destination />} />
           <Route path="/DestinationSingle" element={<DestinationSingle />} />
           <Route path="/ChatApp" element={<ChatApp />} />
+          <Route path="/Favorites" element={<Favorites />} />
           {/* Add this route */}
         </Routes>
         <ScrollToTop />

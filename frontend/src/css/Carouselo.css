@@ -1,19 +1,17 @@
 .carousel-onezz {
   padding: 100px 5rem;
-  background-color: rgba(107, 255, 136, 0.15) !important;
-  color: #fff;
+  background-color: #fff !important;
   /* height: 500px; */
   width: 100%;
 }
 
 .boxing-rayanz {
   background-color: #fff;
-  height: 325px;
-  border-radius: 6px;
+  border-radius: 9px;
+  height: 400px;
 }
 .card-img-top {
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border-radius: 9px;
 }
 
 /* .card-img-top:hover {
@@ -58,4 +56,49 @@ button.nav-link:hover {
 
 ul.slick-dots {
   display: none !important;
+}
+
+img {
+  float: left;
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.card-title {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  color: black;
+}
+
+.favorite-icon {
+  position: absolute;
+  top: 20px; /* Adjust the top position as needed */
+  right: 20px; /* Adjust the right position as needed */
+  z-index: 2; /* Place the icon above the image */
+}
+
+/* Category.css */
+.icon {
+  width: 28px; /* Set the desired width */
+  height: 28px; /* Set the desired height */
+  fill: rgba(0, 0, 0, 0.4); /* Icon fill color */
+  cursor: pointer; /* Add a cursor pointer for interaction */
+}
+
+/* Change the color of the next and previous buttons */
+.slick-prev,
+.slick-next {
+  background-color: grey; /* Change to your desired color */
+  color: grey; /* Change the text color to make it readable */
+  border-radius: 90px; /* Add rounded corners if desired */
+  padding: 5px 10px; /* Adjust padding to change the button size */
+}
+
+/* Change the color on hover if needed */
+.slick-prev:hover,
+.slick-next:hover {
+  background-color: grey; /* Change to the hover color you prefer */
 }

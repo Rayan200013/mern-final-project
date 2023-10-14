@@ -17,6 +17,8 @@ import Destination from "./components/Destination";
 import DestinationSingle from "./components/DestinationSingle";
 import ChatApp from "./components/ChatApp";
 import Favorites from "./components/Favorites";
+import EachCategory from "./components/EachCategory";
+import Contact from "./components/ContactUs";
 
 function App() {
   return (
@@ -38,6 +40,8 @@ function App() {
           <Route path="/DestinationSingle" element={<DestinationSingle />} />
           <Route path="/ChatApp" element={<ChatApp />} />
           <Route path="/Favorites" element={<Favorites />} />
+          <Route path="/EachCategory" element={<EachCategory />} />
+          <Route path="/Contact" element={<Contact />} />
           {/* Add this route */}
         </Routes>
         <ScrollToTop />

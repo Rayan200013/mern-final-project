@@ -15,7 +15,7 @@
   font-weight: 600;
 }
 .nav-item a:hover {
-  color: #e6ff5a !important;
+  color: #00e676 !important;
 }
 
 .serachIcon-section {
@@ -23,20 +23,20 @@
 }
 
 .allez-nav-search-button {
-  background: transparent;
-  border: 1px solid #fff;
+  background: #00e676;
+  border: 1px solid #00e676;
   border-radius: 4px;
   padding: 5px 10px;
-  color: #8f8f8f !important;
+  color: #00e676 !important;
 }
 .allez-nav-search-button:hover {
-  background-color: #fff;
-  color: #000 !important;
+  background-color: transparent;
+  color: #00e676 !important;
 }
 
 .allez-nav-search-button a {
   text-decoration: none;
-  color: #212529 !important;
+  color: #fff !important;
 }
 .allez-nav-search-button a:hover {
   color: #000000;

@@ -22,9 +22,7 @@
 .boxing-rayanz h3 {
   text-align: center;
 }
-.button-rayan-style {
-  text-decoration: none !important;
-}
+
 .slick-slide div {
   margin: 0 1rem;
 }
@@ -45,13 +43,15 @@
 }
 
 button.nav-link {
-  border: 1px solid #000;
+  border: 1px solid #00e676;
   /* margin-bottom: 22px; */
   border-radius: 5px;
-  background: none;
+  background: #00e676;
+  color: #000;
 }
 button.nav-link:hover {
-  background: #000;
+  background: transparent;
+  color: #000;
 }
 
 ul.slick-dots {

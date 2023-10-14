@@ -1,26 +1,64 @@
 import "../css/Home.css";
-// import { Route, Router } from "react-router-dom";
-import HomeOne from "./HomeOne";
-// import "../App.css";
-// import Navbar from "../components/Navbar";
 import Carouselo from "./Carouselo";
-import image2 from "../images/AI-four.png";
 import { useState } from "react";
-import Pricing from "./pricing";
-import Destination from "./Destination";
 import { Link } from "react-router-dom";
 import destination1 from "../images/destination1.jpg";
-import destination2 from "../images/destination2.jpg";
+import destination2 from "../images/destination2.jpeg";
 import destination3 from "../images/destination3.jpg";
-import destination3Fixed from "../images/destination3-fixed.jpg";
-
-import allez from "../images/allez.png";
 import aboutsection from "../images/about-section.jpg";
 import contactus from "../images/contact-us.jpg";
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
+  const [filteredList, setFilteredList] = new useState([]);
+  const [query, setQuery] = useState(""); // Declare query state
 
+  const choufTowns = [
+    "Deir el Qamar",
+    "Beiteddine",
+    "Barouk",
+    "Maasser al-Chouf",
+    "Baakline",
+    "Mukhtara",
+    "Niha",
+    "Kfarhim",
+    "Bisri",
+    "Serjbel",
+    "Semqanieh",
+    "Batloun",
+    "Kfarqatra",
+    "Sight",
+    "Lavender Getaway",
+    "Deir al Oumara",
+    "La maison du bonheur",
+    "Shebbak Habib",
+    "Mir Amin Palace",
+    "Bouyouti",
+    "Bkerzay",
+    "Cabane Florentine",
+    "Jahlieh",
+    "kokoro sushi",
+    "Sushi Bell",
+    "Token",
+    "Shouf Highland",
+    "Shallalat Nabeh Merched",
+    "Shallalat zarka",
+    "Un Basilico",
+    "Coara Restaurant",
+    "Em Boutros Le Restaurant",
+  ];
+  const filterBySearch = (event) => {
+    const query = event.target.value;
+    setQuery(query);
+    if (query === "") {
+      setFilteredList([]); // Clear the filtered list when the query is empty
+    } else {
+      const updatedList = choufTowns.filter((town) =>
+        town.toLowerCase().startsWith(query.toLowerCase())
+      );
+      setFilteredList(updatedList);
+    }
+  };
   const handleSearch = () => {
     setLoading(true);
 
@@ -29,25 +67,21 @@ const Home = () => {
     }, 1500);
   };
 
-  const handleKeyDown = (event) => {
-    if (event.keyCode === 13) {
-      handleSearch();
-    }
-  };
+  // const handleKeyDown = (event) => {
+  //   if (event.keyCode === 13) {
+  //     handleSearch();
+  //   }
+  // };
 
   return (
     <>
-      {/* <div>
-        <HomeOne />
-      </div> */}
-
       {/* 2nd Home Page */}
       {/* Home parent search section start */}
       <div className="home-parent-search-section">
         <div className="search-section">
-          <h1>This is Allez Retour</h1>
+          <h1>This is Aller Retour</h1>
           <p>
-            Welcome to Allez Retour, where every journey is a masterpiece{" "}
+            Welcome to Aller Retour, where every journey is a masterpiece{" "}
             <br></br>
             waiting to be painted with the brushstrokes of your exploration.
           </p>
@@ -56,14 +90,27 @@ const Home = () => {
               id="input"
               type="search"
               placeholder="Type to search"
-              onKeyDown={handleKeyDown}
+              onChange={filterBySearch}
             />
+
             <button id="button" onClick={handleSearch}>
               <i className="fa fa-search"></i>
             </button>
             <div className="spinner">
               <i className="fa fa-spinner"></i>
             </div>
+          </div>
+          <div id="item-list">
+            <table>
+              <tbody>
+                {query.length > 0 &&
+                  filteredList.map((item, index) => (
+                    <tr key={index}>
+                      <td>{item}</td>
+                    </tr>
+                  ))}
+              </tbody>
+            </table>
           </div>
           {/* <div className="note">Click the button or hit enter.</div> */}
         </div>
@@ -87,7 +134,7 @@ const Home = () => {
           </div>
           <div class="col-lg-6">
             <p class="lead">
-              Welcome to Allez Retour, your guide to Al Chouf Region tourism in
+              Welcome to Aller Retour, your guide to Al Chouf Region tourism in
               Lebanon. We're here to help you explore the beauty of the Chouf
               Mountains, offering insights into nature, culture, and cuisine.
               Whether you want tours, dining suggestions, or trip planning tips,
@@ -98,7 +145,7 @@ const Home = () => {
               <Link
                 // type="button"
                 class="btn-primary btn-lg px-4 me-md-2 button-rayan"
-                to="#"
+                to="/about"
               >
                 View More
               </Link>
@@ -107,63 +154,11 @@ const Home = () => {
         </div>
       </div>
       {/* About Us End */}
-
-      {/* parent Ai-help section start */}
-      {/* <div className="parent-Ai-help">
-        <div className="content-ai-help">
-          <h2>Build a trip in minutes</h2>
-          <p>
-            Get a personalized itinerary just for you, guided by traveler tips
-            and reviews.
-            <br />
-            Spend a day with me in Shouf
-          </p>
-          <button className="button-ai-help">Launch a trip with AI</button>
-        </div>
-        <div className="img-ai-help">
-          <img src={image2} alt="" className="imagino-ai-help" />
-        </div>
-      </div> */}
-      {/* parent Ai-help section end */}
-
-      {/* Filter section Start*/}
       <div>
         <div className="carousel-section-new">
           <Carouselo />
         </div>
       </div>
-      {/* Filter section End*/}
-
-      {/* Destination Start */}
-      {/* <div className="Destination-section">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <h2 className="destination-headeing">Top Destination</h2>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <Destination />
-            </div>
-            <div class="col">
-              <Destination />
-            </div>
-            <div class="col">
-              <Destination />
-            </div>
-            <div class="col">
-              <Destination />
-            </div>
-            <div class="col">
-              <Destination />
-            </div>
-          </div>
-        </div>
-      </div> */}
-      {/* Destination End */}
 
       {/* second Destination start */}
       <div class="container px-4 py-5" id="custom-cards">
@@ -172,32 +167,14 @@ const Home = () => {
         <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
           <div class="col">
             <div
-              class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg desti"
+              class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg desti"
               style={{ backgroundImage: `url(${destination1})` }}
             >
               <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
-                  Seek paradise in Serjbel lake and waterfalls
-                </h3>
                 <ul class="d-flex list-unstyled mt-auto">
-                  <li class="me-auto">
-                    <button className="desti-button">
-                      <Link to="/about">More</Link>
-                    </button>
-                  </li>
-                  <li class="d-flex align-items-center me-3">
-                    <svg class="bi me-2" width="1em" height="1em">
-                      <use xlinkhref="#geo-fill" />
-                    </svg>
-                    <small>Serjbel</small>
-                  </li>
-                  {/* <li class="d-flex align-items-center">
-                    <svg class="bi me-2" width="1em" height="1em">
-                      <use xlinkhref="#calendar3" />
-                    </svg>
-                    <small>1d</small>
-                  </li> */}
+                  <li class="me-auto"></li>
                 </ul>
+                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Serjbel</h3>
               </div>
             </div>
           </div>
@@ -208,28 +185,12 @@ const Home = () => {
               style={{ backgroundImage: `url(${destination2})` }}
             >
               <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
-                  Stroll through the stunning streets of Deir el Qamar
-                </h3>
                 <ul class="d-flex list-unstyled mt-auto">
-                  <li class="me-auto">
-                    <button className="desti-button">
-                      <Link to="/about">More</Link>
-                    </button>
-                  </li>
-                  <li class="d-flex align-items-center me-3">
-                    <svg class="bi me-2" width="1em" height="1em">
-                      <use xlinkhref="#geo-fill" />
-                    </svg>
-                    <small>Deir el Qamar</small>
-                  </li>
-                  {/* <li class="d-flex align-items-center">
-                    <svg class="bi me-2" width="1em" height="1em">
-                      <use xlinkhref="#calendar3" />
-                    </svg>
-                    <small>2d</small>
-                  </li> */}
+                  <li class="me-auto"></li>
                 </ul>
+                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                  Deir El Qamar
+                </h3>
               </div>
             </div>
           </div>
@@ -238,32 +199,16 @@ const Home = () => {
             <div
               class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg desti"
               style={{
-                backgroundImage: `url(${destination3Fixed})`,
+                backgroundImage: `url(${destination3})`,
               }}
             >
-              <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
-                  Hike to Al Chouf Cedar Nature Reserve
-                </h3>
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                 <ul class="d-flex list-unstyled mt-auto">
-                  <li class="me-auto">
-                    <button className="desti-button">
-                      <Link to="/about">More</Link>
-                    </button>
-                  </li>
-                  <li class="d-flex align-items-center">
-                    <svg class="bi me-2" width="1em" height="1em">
-                      <use xlinkhref="#calendar3" />
-                    </svg>
-                    <small></small>
-                  </li>
-                  <li class="d-flex align-items-center me-3">
-                    <svg class="bi me-2" width="1em" height="1em">
-                      <use xlinkhref="#geo-fill" />
-                    </svg>
-                    <small>Al Shouf Cedars</small>
-                  </li>
+                  <li class="me-auto"></li>
                 </ul>
+                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                  Beiteddine
+                </h3>
               </div>
             </div>
           </div>
@@ -346,15 +291,6 @@ const Home = () => {
         </div>
       </div>
       {/* services End */}
-      {/* pricing start */}
-
-      {/* <div className="pricing-section">
-        <Pricing />
-      </div> */}
-
-      {/* pricing end */}
-
-      {/* contact form start */}
 
       <div className=" contact-us-allez container px-4 py-5" id="hanging-icons">
         <h2 className="pb-2 border-bottom h2-rayan">Contact Us</h2>

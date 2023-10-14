@@ -7,7 +7,7 @@ const landmarksController = require("../controllers/landmarkController");
 const activitiesController = require("../controllers/activitiesController");
 const accommodationsController = require("../controllers/accommodationController");
 const allDataController = require("../controllers/allDataController");
-const favoritesController = require("../controllers/favoritesController");
+// const favoritesController = require("../controllers/favoritesController");
 
 //-----------USER ROUTES----------//
 router.post("/users/login", userController.login); // /api/users/login

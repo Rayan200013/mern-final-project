@@ -39,11 +39,6 @@ const NavBar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/ChatApp">
-                Have a chat
-              </Link>
-            </li>
-            <li className="nav-item">
               <Link className="nav-link" to="/about">
                 About Us
               </Link>
@@ -54,7 +49,7 @@ const NavBar = () => {
               </Link>
             </li> */}
             <li className="nav-item">
-              <Link className="nav-link" to="/contact">
+              <Link className="nav-link" to="/Contact">
                 Contact Us
               </Link>
             </li>

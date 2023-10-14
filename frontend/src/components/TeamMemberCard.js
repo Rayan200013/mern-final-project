@@ -1,14 +1,13 @@
 import React from "react";
 import "../css/TeamMember.css";
 
-const TeamMemberCard = ({ name, role, imgSrc, description }) => {
+const TeamMemberCard = ({ name, imgSrc, role }) => {
   return (
     <div className="team-member-card">
-      <img src={imgSrc} alt={`${name} - ${role}`} />
+      <img src={imgSrc} alt={"/"} />
       <div className="team-member-details">
         <h3>{name}</h3>
         <p className="role">{role}</p>
-        <p className="description">{description}</p>
       </div>
     </div>
   );

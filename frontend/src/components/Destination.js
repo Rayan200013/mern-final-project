@@ -2,9 +2,8 @@ import React from "react";
 import "../css/Destination.css";
 import { Link } from "react-router-dom";
 import destination1 from "../images/destination1.jpg";
-import destination2 from "../images/destination2.jpg";
+import destination2 from "../images/destination2.jpeg";
 import destination3 from "../images/destination3.jpg";
-import destination3Fixed from "../images/destination3-fixed.jpg";
 
 export default function Destination() {
   return (
@@ -100,12 +99,12 @@ export default function Destination() {
             <div
               class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg desti"
               style={{
-                backgroundImage: `url(${destination3Fixed})`,
+                backgroundImage: `url(${destination3})`,
               }}
             >
               <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
                 <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
-                  Hike to Al Chouf Cedar Nature Reserve
+                  Beiteddine
                 </h3>
                 <ul class="d-flex list-unstyled mt-auto">
                   <li class="me-auto">
@@ -135,7 +134,7 @@ export default function Destination() {
           <div
             class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg desti desti-three"
             style={{
-              backgroundImage: `url(${destination3Fixed})`,
+              backgroundImage: `url(${destination3})`,
             }}
           >
             <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">

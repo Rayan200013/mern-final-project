@@ -135,7 +135,7 @@
     221,
     0.048
   );  */
-  background: url("../images/banner-test-one.jpg");
+  background: url("../images/ALSHOUF.jpg");
   /* Using "255" for blue, assuming you meant a blue color */
   /* opacity: 0.2; */
   background-repeat: no-repeat;
@@ -228,7 +228,7 @@
 #search {
   align-items: center;
   background: #00e676;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   display: flex;
   justify-content: space-between;
   margin: 0.5em 0;
@@ -238,7 +238,7 @@
 }
 #search:hover,
 #search:focus {
-  background: #e6ff5a;
+  background: #00e676;
 }
 #search button,
 #search input {
@@ -281,6 +281,31 @@
   display: block;
 }
 
+/* Add this CSS to style the table */
+#item-list table {
+  width: 100%;
+  border: 2px solid #00e676;
+  background-color: #00e676;
+  border-radius: 10px;
+  margin-top: 1em;
+  width: 610px;
+  border-radius: 9px;
+  margin-top: -9px;
+}
+
+#item-list table td {
+  padding: 0.5em 1em;
+  text-align: center;
+}
+
+#item-list table tr:hover {
+  background-color: #eee;
+}
+
+#search.loading #item-list table {
+  display: table; /* Show the table when loading */
+}
+
 @-webkit-keyframes spinner {
   0% {
     transform: rotate(0deg);
@@ -299,11 +324,6 @@
   }
 }
 /* search section end */
-
-.packages-section {
-  margin: 40px 50px;
-  background-color: #000;
-}
 
 .ripple-surface {
   min-width: unset !important;
@@ -336,12 +356,32 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-h3 {
-  color: #e6ff5a !important;
+.card-cover {
+  height: 100%; /* Make the card fill its parent container's height */
+  position: relative; /* Position relative for containing ::before pseudo-element */
 }
 
-.desti-button {
+.card-cover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.3
+  ); /* Adjust the opacity (the last value) as needed */
+}
+
+h3 {
+  color: #fff !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* .desti-button {
   background: #00e676;
   padding: 3px 10px;
   border-radius: 8px;
@@ -349,16 +389,16 @@ h3 {
 }
 .desti-button:hover {
   background: unset !important;
-}
+} */
 
 a {
-  text-decoration: none;
-  color: #fff !important;
+  text-decoration: none !important;
+  color: #000 !important;
 }
 
 .about-section-in-home {
   padding: 10px;
-  background-color: #e6ff5a;
+  background-color: #00e676;
 }
 
 .icon-rayan {
@@ -366,7 +406,7 @@ a {
 }
 
 .breadcrumb-divider a {
-  color: #e6ff5a !important;
+  color: #00e676 !important;
 }
 
 .contact-padding {

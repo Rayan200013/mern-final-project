@@ -125,7 +125,9 @@ const Carouselo = () => {
   return (
     <>
       <div className="carousel-onezz">
-        <h2 style={{ color: "black" }}>Explore Our Diverse Categories</h2>
+        <h2 class="pb-2 border-bottom h2-rayan" style={{ color: "#8f8f8f" }}>
+          Explore Our Diverse Categories
+        </h2>
         <ul className="nav justify-content-center">
           <li className="nav-item rayanz-nav-item-carouselo">
             <button
@@ -189,7 +191,81 @@ const Carouselo = () => {
                   />
                   <div className="card-body">
                     <button className="card-title">{card[0]?.Name}</button>
-                    <p>{card[0]?.PhoneNumber}</p>
+                  </div>
+                </div>
+              )
+          )}
+          {allData.map(
+            (card) =>
+              selectedLink === "all" && (
+                <div className="boxing-rayanz">
+                  <img
+                    src={card[1]?.Images}
+                    className="card-img-top"
+                    alt={card.title}
+                  />
+                  <div className="card-body">
+                    <button className="card-title">{card[1]?.Name}</button>
+                  </div>
+                </div>
+              )
+          )}
+          {allData.map(
+            (card) =>
+              selectedLink === "all" && (
+                <div className="boxing-rayanz">
+                  <img
+                    src={card[2]?.Images}
+                    className="card-img-top"
+                    alt={card.title}
+                  />
+                  <div className="card-body">
+                    <button className="card-title">{card[2]?.Name}</button>
+                  </div>
+                </div>
+              )
+          )}
+          {allData.map(
+            (card) =>
+              selectedLink === "all" && (
+                <div className="boxing-rayanz">
+                  <img
+                    src={card[3]?.Images}
+                    className="card-img-top"
+                    alt={card.title}
+                  />
+                  <div className="card-body">
+                    <button className="card-title">{card[3]?.Name}</button>
+                  </div>
+                </div>
+              )
+          )}
+          {allData.map(
+            (card) =>
+              selectedLink === "all" && (
+                <div className="boxing-rayanz">
+                  <img
+                    src={card[4]?.Images}
+                    className="card-img-top"
+                    alt={card.title}
+                  />
+                  <div className="card-body">
+                    <button className="card-title">{card[4]?.Name}</button>
+                  </div>
+                </div>
+              )
+          )}
+          {allData.map(
+            (card) =>
+              selectedLink === "all" && (
+                <div className="boxing-rayanz">
+                  <img
+                    src={card[5]?.Images}
+                    className="card-img-top"
+                    alt={card.title}
+                  />
+                  <div className="card-body">
+                    <button className="card-title">{card[5]?.Name}</button>
                   </div>
                 </div>
               )
@@ -205,7 +281,6 @@ const Carouselo = () => {
                   />
                   <div className="card-body">
                     <button className="card-title">{card?.Name}</button>
-                    <p>{card?.PhoneNumber}</p>
                   </div>
                 </div>
               )
@@ -221,7 +296,6 @@ const Carouselo = () => {
                   />
                   <div className="card-body">
                     <button className="card-title">{card?.Name}</button>
-                    <p>{card?.PhoneNumber}</p>
                   </div>
                 </div>
               )
@@ -237,7 +311,6 @@ const Carouselo = () => {
                   />
                   <div className="card-body">
                     <button className="card-title">{card?.Name}</button>
-                    <p>{card?.PhoneNumber}</p>
                   </div>
                 </div>
               )
@@ -253,7 +326,6 @@ const Carouselo = () => {
                   />
                   <div className="card-body">
                     <button className="card-title">{card?.Name}</button>
-                    <p>{card?.PhoneNumber}</p>
                   </div>
                 </div>
               )

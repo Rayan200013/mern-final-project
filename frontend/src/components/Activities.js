@@ -90,7 +90,7 @@ function Category() {
               <img
                 src={data?.Images}
                 alt="{data.title}"
-                style={{ height: "50%" }}
+                // style={{ height: "50%" }}
               />
             </div>
             <div className="card-content">

@@ -36,7 +36,7 @@
 
 .allez-nav-search-button a {
   text-decoration: none;
-  color: #fff !important;
+  color: #000 !important;
 }
 .allez-nav-search-button a:hover {
   color: #000000;
